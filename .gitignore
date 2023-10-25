@@ -136,3 +136,14 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+
+# Train data
+user_tag_query.10W.TRAIN
+
+# Result data
+all_logs.txt
+jieba_words.txt
+re_filter.txt
+seeds_keyvalue.txt
+stop_words.txt
+stopwords_filter.txt
