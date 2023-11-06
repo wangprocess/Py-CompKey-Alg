@@ -147,3 +147,8 @@ re_filter.txt
 seeds_keyvalue.txt
 stop_words.txt
 stopwords_filter.txt
+
+result/
+agencywords_compkey/
+seedwords_agencywords/
+test_txt/
