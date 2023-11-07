@@ -139,6 +139,7 @@ cython_debug/
 
 # Train data
 user_tag_query.10W.TRAIN
+cc.zh.300.bin.gz
 
 # Result data
 all_logs.txt
@@ -152,3 +153,5 @@ result/
 agencywords_compkey/
 seedwords_agencywords/
 test_txt/
+old_data/
+comp/
