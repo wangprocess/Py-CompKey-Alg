@@ -146,7 +146,6 @@ all_logs.txt
 jieba_words.txt
 re_filter.txt
 seeds_keyvalue.txt
-stop_words.txt
 stopwords_filter.txt
 
 result/

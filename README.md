@@ -2,6 +2,50 @@ Py-CompKey-dev
 
 竞争性关键词的搜索引擎开发
 
+部署运行：
+	1、首先你需要老师提供的或者网上下载的百度的某一年的搜索记录，这里用到的是user_tag_query.10W.TRAIN文件
+	2、终端执行pip install -r requirement下载依赖
+	3、按jupyter的代码块顺序运行代码
+
+文件结构：
+	1、ana_eval_sparse.py文件是用来探究词向量相似度的准确率的，没有实际意义，与项目关系不大
+	2、experiment1.ipynb文件是进行系统开发的第一版，是未进行优化的代码，是核心代码
+	3、experiment2.ipynb文件是优化后的代码，提高竞争性关键词计算的性能
+	4、stop_words.txt是所用到的停语词列表
+	
+运行核心代码后的文件结构：
+PY-comp-key-dev
+├─agencywords_compkey  # 对每一个种子关键词，通过中介关键词来查找竞争性关键词
+│  ├─compkey_words  # 竞争性关键词结果
+│  ├─jieba_search_info  # jieba分词后的结果
+│  ├─search_info  # 从所有搜索记录中找出含有中介关键词的搜索记录
+│  └─stop_words_filter  # 停语词过滤后的结果
+│  
+├─comp  # 算出每个种子关键词的总的comp度，也就是西格玛求和后的comp度，对每一个中介关键词进行加权
+│  
+├─comp_plus  # 对comp文件夹中的结果进一步过滤，去掉中介关键词，探究出来的问题，进行过滤，所以这是最终文件
+│ 
+├─result  # 每个种子关键词对应的在中介关键词a下的comp度
+│  
+├─seedwords_agencywords  #通过种子关键词查找中介关键词
+│  ├─agency_words  # 中介关键词结果
+│  ├─jieba_search_info  # jieba分词后的结果
+│  ├─search_info  # 从所有搜索记录中找出含有种子关键词的搜索记录
+│  └─stop_words_filter  # 停语词过滤后的结果
+│  
+├─all_logs.txt  # 对原始搜索记录user_tag_query.10W.TRAIN文件处理后的所有搜索记录
+├─jieba_words.txt  # jieba分词后的输出文件
+├─re_filter.txt  # 正则表达式过滤后的输出文件，去除不合理的网址、乱码等
+├─experiment1.ipynb  # 核心代码
+├─experiment2.ipynb  # 优化后的代码
+├─requirement  # 依赖文件
+├─seeds_keyvalue.txt # 对jieba分词后的数据进行统计
+├─stop_words.txt # 停语词文件，过滤的参考文件
+└─stopwords_filter.txt # 停语词过滤后输出的文件
+
+
+
+
 第一阶段：
 	完成数据的预处理和清洗工作
 	根据关键词的出现频率来选取种子关键词

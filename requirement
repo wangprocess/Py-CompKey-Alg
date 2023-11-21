@@ -1,0 +1,7 @@
+jieba
+chardet
+ray
+spacy
+matplotlib
+numpy
+gensim
